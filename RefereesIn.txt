@@ -1,0 +1,12 @@
+DG1 Dave Gray NJB2 3 Central NYY
+DM1 Denis Montague IJB1 3 North YYY
+JL1 Jack Low IJB2 2 South NYY
+KL1 Kenneth Lorrimer IJB2 6 South YYY
+KL2 Kenneth Lindsay NJB3 12 Central YYY
+TT1 Timq Tomsh IJB1 2 Central NYN 
+TT2 Timw Tomsm IJB1 3 South NYY 
+TT3 Time Tomsn IJB1 4 North YYN 
+TT4 Timr Tomsb IJB1 6 Central NYN 
+TT5 Timt Tomsv IJB1 1 South NNY 
+TT6 Timy Tomsc IJB1 2 North YYN 
+TT7 Timi Tomsz IJB1 7 South NNY 
