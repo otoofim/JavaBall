@@ -13,12 +13,14 @@ public class Model
 {
 	//List<String><String> referees = new ArrayList<String><String>();
 	//String[][] referees = new String[12][7]; 
+	private int indexSearched;
 	private List<List<String>> referees;
 	Model()
 	{
 		referees = new ArrayList<List<String>>();
 		readingInput();
 		myPrint();
+		indexSearched = -1;
 	}
 	
 	void readingInput()
@@ -71,7 +73,6 @@ public class Model
 	
 	public boolean findReferee(String firName, String lastName)
 	{
-		boolean isExist = false;
 		
 		for(int i=0;i<referees.size();i++)
 		{
@@ -79,12 +80,39 @@ public class Model
 			{
 				if(referees.get(i).get(2).toUpperCase().equals(lastName.toUpperCase()))
 				{
-					isExist = true;
+					indexSearched = i;
+					return true;
 				}
 				
 			}
 		}
-		return isExist;
+		return false;
+	}
+	
+	public List<String> returnSearchResult()
+	{
+		return referees.get(indexSearched);	
+	}
+	
+	public int dataSize()
+	{
+		return referees.size();
+	}
+	
+	public void delete()
+	{
+		List<List<String>> referees2 = referees;
+		referees = new ArrayList<List<String>>();
+		for(int i=0;i<referees2.size();i++)
+		{
+			if(i != indexSearched)
+			{
+				referees.add(referees2.get(i));
+			}
+						
+		}
+		myPrint();
+		
 	}
 
 }

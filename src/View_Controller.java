@@ -101,8 +101,9 @@ public class View_Controller extends JFrame implements ActionListener
 		{
 			if (mymodel.findReferee(FirName.getText().trim(), lastName.getText().trim()))
 			{
-				
-				Edit_Detail x = new Edit_Detail();
+				FirName.setText("");
+				lastName.setText("");
+				Edit_Detail x = new Edit_Detail(mymodel);
 			}
 			else
 			{
