@@ -12,35 +12,49 @@ import java.util.StringTokenizer;
 public class Model 
 {
 	//List<String><String> referees = new ArrayList<String><String>();
-	String[][] referees = new String[12][7]; 
-	public static void main(String[] arg)
+	//String[][] referees = new String[12][7]; 
+	List<List<String>> referees;
+	Model()
 	{
+		referees = new ArrayList<List<String>>();
 		readingInput();
-	} 
-	static void readingInput()
+		myPrint();
+	}
+	
+	void readingInput()
 	{
 		try {
-			File file = new File("RefereesIn.txt");
-			FileReader fileReader = new FileReader(file);
-			BufferedReader bufferedReader = new BufferedReader(fileReader);
-			StringBuffer stringBuffer = new StringBuffer();
-			String line;
-			while ((line = bufferedReader.readLine()) != null)
+				File file = new File("RefereesIn.txt");
+				FileReader fileReader = new FileReader(file);
+				BufferedReader bufferedReader = new BufferedReader(fileReader);
+				StringBuffer stringBuffer = new StringBuffer();
+				String line;
+				while ((line = bufferedReader.readLine()) != null)
+				{
+					StringTokenizer spaceTokenizer = new StringTokenizer(line);
+					List<String> row = new ArrayList<String>();
+					while (spaceTokenizer.hasMoreTokens())
+					{
+						row.add(spaceTokenizer.nextToken());
+					}
+					referees.add(row);
+				}
+				fileReader.close();
+			} 
+			catch (IOException e)
 			{
-				StringTokenizer defaultTokenizer = new StringTokenizer(line);
-				 while (defaultTokenizer.hasMoreTokens())
-				 {
-					 System.out.println(defaultTokenizer.nextToken());
-				 }
-				//stringBuffer.append(line);
-				//stringBuffer.append("\n");
+				e.printStackTrace();
 			}
-			fileReader.close();
-			//System.out.println("Contents of file:");
-			//System.out.println(stringBuffer.toString());
-		} catch (IOException e)
+	}
+	
+	public void myPrint()
+	{
+		System.out.println("update:");
+		System.out.format("%-15s%-15s%-15s%-15s%-20s%-15s%-15s\n", "Referee ID","First name", "Last name", "Qualification", "Number of matches", "Home area", "Areas");
+		for(int i=0;i<referees.size();i++)
 		{
-			e.printStackTrace();
+			String[] x = referees.get(i).toArray(new String[referees.get(i).size()]);
+			System.out.format("%-15s%-15s%-15s%-15s%-20s%-15s%-15s\n", x);
 		}
 	}
 
