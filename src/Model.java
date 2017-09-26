@@ -13,7 +13,7 @@ public class Model
 {
 	//List<String><String> referees = new ArrayList<String><String>();
 	//String[][] referees = new String[12][7]; 
-	List<List<String>> referees;
+	private List<List<String>> referees;
 	Model()
 	{
 		referees = new ArrayList<List<String>>();
@@ -49,13 +49,23 @@ public class Model
 	
 	public void myPrint()
 	{
-		System.out.println("update:");
+		System.out.println("\n*********************update:*********************\n");
 		System.out.format("%-15s%-15s%-15s%-15s%-20s%-15s%-15s\n", "Referee ID","First name", "Last name", "Qualification", "Number of matches", "Home area", "Areas");
 		for(int i=0;i<referees.size();i++)
 		{
 			String[] x = referees.get(i).toArray(new String[referees.get(i).size()]);
 			System.out.format("%-15s%-15s%-15s%-15s%-20s%-15s%-15s\n", x);
 		}
+	}
+	
+	public String[] refereesName()
+	{
+		String[] refN = new String[referees.size()];
+		for(int i=0;i<referees.size();i++)
+		{
+			refN[i] = String.format("%s %s", referees.get(i).get(1), referees.get(i).get(2));
+		}
+		return refN;
 	}
 
 }
