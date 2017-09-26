@@ -5,8 +5,6 @@ public class Main {
 	{
 		Model mymodel = new Model();
 		View_Controller bf = new View_Controller(mymodel);
-
-
 	}
 
 }

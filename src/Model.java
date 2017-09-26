@@ -68,5 +68,23 @@ public class Model
 		}
 		return refN;
 	}
+	
+	public boolean findReferee(String firName, String lastName)
+	{
+		boolean isExist = false;
+		
+		for(int i=0;i<referees.size();i++)
+		{
+			if(referees.get(i).get(1).toUpperCase().equals(firName.toUpperCase()))
+			{
+				if(referees.get(i).get(2).toUpperCase().equals(lastName.toUpperCase()))
+				{
+					isExist = true;
+				}
+				
+			}
+		}
+		return isExist;
+	}
 
 }
