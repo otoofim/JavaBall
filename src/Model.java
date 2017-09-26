@@ -49,7 +49,7 @@ public class Model
 	
 	public void myPrint()
 	{
-		System.out.println("\n*********************update:*********************\n");
+		System.out.println("\n*********************update*********************\n");
 		System.out.format("%-15s%-15s%-15s%-15s%-20s%-15s%-15s\n", "Referee ID","First name", "Last name", "Qualification", "Number of matches", "Home area", "Areas");
 		for(int i=0;i<referees.size();i++)
 		{
@@ -57,6 +57,7 @@ public class Model
 			System.out.format("%-15s%-15s%-15s%-15s%-20s%-15s%-15s\n", x);
 		}
 	}
+	
 	
 	public String[] refereesName()
 	{
